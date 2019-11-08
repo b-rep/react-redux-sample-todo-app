@@ -1,0 +1,38 @@
+{
+  "name": "react-skeleton",
+  "version": "1.0.0",
+  "description": "React Skeleton",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --config ./webpack.config.js --mode development"
+  },
+  "keywords": [],
+  "author": "Brandon",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.6.3",
+    "babel-loader": "^8.0.6",
+    "react-hot-loader": "^4.12.15",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.9.0"
+  },
+  "dependencies": {
+    "css-loader": "^3.2.0",
+    "formik": "^2.0.3",
+    "lodash": "^4.17.15",
+    "prop-types": "^15.7.2",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-modal": "^3.11.1",
+    "react-redux": "^7.1.1",
+    "reactjs-popup": "^1.5.0",
+    "redux": "^4.0.4",
+    "redux-thunk": "^2.3.0",
+    "style-loader": "^1.0.0",
+    "uuid": "^3.3.3",
+    "yup": "^0.27.0"
+  }
+}

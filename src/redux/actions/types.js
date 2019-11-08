@@ -1,0 +1,6 @@
+export const CREATE_TODO = 'CREATE_TODO';
+export const DELETE_TODO = 'DELETE_TODO';
+export const EDIT_TODO = 'EDIT_TODO';
+export const GET_TODOS = 'GET_TODOS';
+export const TOGGLE_EDIT_TODO_MODAL = 'TOGGLE_EDIT_TODO_MODAL';
+export const TOGGLE_TODO_COMPLETION = 'TOGGLE_TODO_COMPLETION';

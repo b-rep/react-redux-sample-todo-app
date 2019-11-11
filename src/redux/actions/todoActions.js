@@ -4,7 +4,8 @@ import {
   DELETE_TODO,
   TOGGLE_EDIT_TODO_MODAL,
   EDIT_TODO,
-  TOGGLE_TODO_COMPLETION
+  TOGGLE_TODO_COMPLETION,
+  TOGGLE_NOTES_MODAL
 } from './types';
 
 export const getTodos = () => dispatch => {
@@ -42,7 +43,16 @@ export const editTodo = (id, description) => dispatch => {
   });
 }
 
-export const toggleTodoCompletion = (id, bool) => dispatch => {
-  console.log(id);
-  console.log(bool);
+export const toggleTodoCompletion = (isCompleted, id) => dispatch => {
+  dispatch({
+    type: TOGGLE_TODO_COMPLETION,
+    payload: {isCompleted, id}
+  });
+}
+
+export const toggleNotesModal = (bool, todo) => dispatch => {
+  dispatch({
+    type: TOGGLE_NOTES_MODAL,
+    payload: {bool, todo}
+  });
 }

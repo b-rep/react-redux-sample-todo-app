@@ -1,7 +1,7 @@
 import React from 'react';
-import {Formik, Form, Field, ErrorMessage} from 'formik';
+import {Formik, Form, Field} from 'formik';
 import {connect} from 'react-redux';
-import {editTodo} from '../redux/actions/todoActions';
+import {editTodo, toggleEditTodoModal} from '../redux/actions/todoActions';
 
 //regex to assert we aren't adding a todo that is an empty string or only has spaces
 const validRegex = /^\s*$/;
@@ -11,6 +11,10 @@ const isSubmissionValid = (value) => {
 }
 
 class EditTodoForm extends React.Component {
+  close() {
+    this.props.dispatch(toggleEditTodoModal(false, {}));
+  }
+
   handleSubmit(values, todo) {
     const {id} = todo;
     const {description} = values;
@@ -26,8 +30,8 @@ class EditTodoForm extends React.Component {
   }
 
   render() {
-    const {editTodo} = this.props;
-    const {description} = editTodo;
+    const {todo} = this.props;
+    const {description} = todo;
     const initialValues = {description};
 
     return (
@@ -35,7 +39,7 @@ class EditTodoForm extends React.Component {
         <h2>Edit Todo</h2>
         <Formik
           initialValues={initialValues}
-          onSubmit={(values) => this.handleSubmit(values, editTodo)}
+          onSubmit={(values) => this.handleSubmit(values, todo)}
           validate={this.handleValidate}
         >
           {({errors, touched}) => (
@@ -46,7 +50,12 @@ class EditTodoForm extends React.Component {
                 <div className="error">{errors.description}</div>
               ) : null}
               <br />
-              <button type="submit">Submit</button>  
+              <button type="submit">
+                Submit
+              </button> 
+              <button onClick={() => this.close()} type = "button">
+                Close
+              </button> 
             </Form>    
           )}
         </Formik>

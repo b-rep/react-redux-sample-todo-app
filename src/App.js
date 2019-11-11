@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './style/App.css';
+import './style/Todos.css';
 
 import About from './components/About';
 import Todos from './components/Todos';
